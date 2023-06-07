@@ -1,4 +1,6 @@
 import streamlit as st
+import pandas as pd
+
 from rowEdit import add_row
 
 from datetime import date
@@ -11,7 +13,13 @@ add = st.button(label='Add', key='Add')
 
 mylist = [selected_date, com_ser_text, selected_group, price]
 
+
+# Create a dataframe with some data
+df = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})
+
+# Write the dataframe to an Excel file
+df.to_excel('newCosts.xlsx', index=False)
+
+
 if add:
     add_row(mylist)
-
-
