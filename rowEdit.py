@@ -5,7 +5,7 @@ path = 'myCosts.xlsx'
 
 def add_row(costList):
     myWorkbook = openpyxl.Workbook()
-    worksheet = myWorkbook['Sheet1']
+    worksheet = myWorkbook.active
 
     worksheet.append(costList)
     myWorkbook.save(path)
