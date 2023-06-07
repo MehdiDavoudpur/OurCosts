@@ -1,8 +1,8 @@
 import openpyxl
-
+path = 'myCosts.xlsx'
 mylist = []
 j = 0
-workbook = openpyxl.load_workbook('/costs.xlsx')
+workbook = openpyxl.load_workbook(path)
 worksheet = workbook['Sheet1']
 print(mylist)
 while True:

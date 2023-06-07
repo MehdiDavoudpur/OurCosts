@@ -14,5 +14,4 @@ mylist = [selected_date, com_ser_text, selected_group, price]
 if add:
     add_row(mylist)
 
-print(mylist)
 

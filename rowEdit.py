@@ -1,12 +1,11 @@
 import openpyxl
 
-path = 'costs.xlsx'
-print(path)
+path = 'myCosts.xlsx'
 
 
 def add_row(costList):
-    workbook = openpyxl.load_workbook(path)
-    worksheet = workbook['Sheet1']
+    myWorkbook = openpyxl.Workbook()
+    worksheet = myWorkbook['Sheet1']
 
     worksheet.append(costList)
-    workbook.save(path)
+    myWorkbook.save(path)
