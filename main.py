@@ -7,6 +7,8 @@ from datetime import date
 import pandas as pd
 
 myPath = 'ourCosts.xlsx'
+header = ['Date', 'Commodity/Service', 'Group', 'Price']
+add_row(header)
 
 options = ['Food', 'Clothes', 'Housing', 'Health', 'Education', 'Entertainment', 'Transportation']
 selected_date = st.date_input("Date:", date.today())
