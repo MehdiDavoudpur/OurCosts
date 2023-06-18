@@ -1,20 +1,18 @@
-import base64
-
-import pandas
 import streamlit as st
 from functions import add_row
 from datetime import date
-import pandas as pd
 
 myPath = 'ourCosts.xlsx'
 header = ['Date', 'Commodity/Service', 'Group', 'Price']
-add_row(myPath, header)
+options = ['Food', 'Clothes', 'Housing', 'Health', 'Education', 'Entertainment & Welfare', 'Transportation']
 
-options = ['Food', 'Clothes', 'Housing', 'Health', 'Education', 'Entertainment', 'Transportation']
-selected_date = st.date_input("Date:", date.today())
-com_ser_text = st.text_input(label="Commodity/Service:")
-selected_group = st.selectbox("Group:", options)
-price = st.text_input(label='Price:')
+if st.session_state.get('com/ser', None) is None:
+    add_row(myPath, header)
+
+selected_date = st.date_input("Date:", date.today(), key='date')
+com_ser_text = st.text_input(label="Commodity/Service:", key='com/ser')
+selected_group = st.selectbox("Group:", options, key='group')
+price = st.text_input(label='Price:', key='price')
 add = st.button(label='Add', key='Add')
 create_dl_lnk = st.button(label='Create Download link', key='c_d_l')
 
@@ -30,6 +28,4 @@ if create_dl_lnk:
         st.download_button(label='Download Excel file', data=data, file_name='ourCosts.xlsx',
                            mime='application/vnd.malformations-office document.spreadsheet.sheet')
 
-
-    # Call the function to show the download button
     download_excel()
