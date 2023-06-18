@@ -6,10 +6,10 @@ myPath = 'ourCosts.xlsx'
 header = ['Date', 'Commodity/Service', 'Group', 'Price']
 options = ['Food', 'Clothes', 'Housing', 'Health', 'Education', 'Entertainment & Welfare', 'Transportation']
 
-if st.session_state.get('date', None) is None &\
-        st.session_state.get('com/ser', None) is None & \
-        st.session_state.get('price', None) is None :
-    add_row(myPath, header)
+if st.session_state.get('date', None) is None :
+        if st.session_state.get('com/ser', None) is None :
+            if st.session_state.get('price', None) is None :
+                add_row(myPath, header)
 
 title_bar = st.title('Our Costs'.title())
 title_bar2 = st.header('Registration and management of expenses'.title())
@@ -31,5 +31,6 @@ if create_dl_lnk:
             data = f.read()
         st.download_button(label='Download Excel file', data=data, file_name='ourCosts.xlsx',
                            mime='application/vnd.malformations-office document.spreadsheet.sheet')
+
 
     download_excel()
