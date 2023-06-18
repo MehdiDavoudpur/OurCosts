@@ -9,6 +9,8 @@ options = ['Food', 'Clothes', 'Housing', 'Health', 'Education', 'Entertainment &
 if st.session_state.get('com/ser', None) is None:
     add_row(myPath, header)
 
+title_bar = st.title('Our Costs'.title())
+title_bar2 = st.header('Registration and management of expenses'.title())
 selected_date = st.date_input("Date:", date.today(), key='date')
 com_ser_text = st.text_input(label="Commodity/Service:", key='com/ser')
 selected_group = st.selectbox("Group:", options, key='group')
