@@ -17,6 +17,7 @@ price = st.text_input(label='Price:', key='price')
 add = st.button(label='Add', key='Add')
 show = st.button(label='Show', key='show')
 
+
 # selected_row = st.number_input("Enter the ID of the row you want to edit or delete:", min_value=1, value=1)
 #
 # edit = st.button(label='edit', key='edit')
