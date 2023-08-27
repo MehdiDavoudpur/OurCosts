@@ -33,7 +33,9 @@ show_chart = st.button(label='Show Chart', key='c_show')
 # n_price = st.text_input(label='New Price:', key='n_price')
 #
 # delete = st.button(label='delete', key='delete')
-#
+
+
+
 record = [(com_ser, selected_category, price, selected_date)]
 
 
