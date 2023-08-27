@@ -34,7 +34,7 @@ show_chart = st.button(label='Show Chart', key='c_show')
 #
 # delete = st.button(label='delete', key='delete')
 #
-row = [(com_ser, selected_category, price, selected_date)]
+record = [(com_ser, selected_category, price, selected_date)]
 
 
 def new_record(a_row):
