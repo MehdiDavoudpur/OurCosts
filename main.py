@@ -35,7 +35,6 @@ show_chart = st.button(label='Show Chart', key='c_show')
 # delete = st.button(label='delete', key='delete')
 
 
-
 record = [(com_ser, selected_category, price, selected_date)]
 
 
@@ -118,7 +117,7 @@ def delete_data(row_id):
 
 
 if add:
-    new_record(row)
+    new_record(record)
     st.success("Cost Added successfully!")
 
 if show_all:
@@ -141,7 +140,6 @@ if show_dates:
 
     st.table(dates_list)
 
-
 if show_com_ser:
     com_sers = collect_com_ser_s()
     com_sers_list = []
@@ -149,7 +147,6 @@ if show_com_ser:
         com_sers_list.append(com_sers[i][0])
 
     st.table(com_sers_list)
-
 
 if show_category:
     categories = collect_category_s()
@@ -160,7 +157,6 @@ if show_category:
 
     print(categories_list)
     st.table(categories_list)
-
 
 if show_chart:
 
