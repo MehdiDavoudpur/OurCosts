@@ -153,9 +153,7 @@ if show_category:
     categories_list = []
     for i in range(len(categories)):
         categories_list.append(categories[i][0])
-        print(categories[i][0])
 
-    print(categories_list)
     st.table(categories_list)
 
 if show_chart:
